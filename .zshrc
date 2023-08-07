@@ -132,4 +132,5 @@ source /home/soeguet/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/soeguet/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias config='/sbin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
+export EDITOR=nvim
+export VISUAL=nvim;

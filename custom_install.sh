@@ -1,4 +1,4 @@
-#!/sbin/bash
+#!/usr/bin/env bash
 
 # Aktualisiere die Paketdatenbank
 sudo pacman -Syu --noconfirm
@@ -9,42 +9,58 @@ uebersprungene_pakete=()
 
 # Installiere einige Pakete mit pacman
 pacman_pakete=(
-  "vim"  
-  "git"
-  "htop"
-  "firefox"
-  "sudo"
-  "code"
-  "blueberry"
-  "blueman"
-  "docker"
-  "exa"
-  "fd"
-  "fzf"
-  "gnome-terminal"
-  "gst-plugin-pipewire"
-  "hyprland"
-  "intel-ucode"
-  "iwd"
-  "jdk17-openjdk"
-  "kitty"
-  "lazygit"
-  "ly"
-  "mako"
-  "mupdf"
+
+  # editor
+  "vim"
   "nano"
-  "nemo"
-  "neofetch"
   "neovim"
-  "networkmanager"
-  "npm"
-  "pipewire-alsa"
-  "rofi"
+
+  # programming
+  "git"
+  "lazygit"
+  #"code"
+  "docker"
+  "jdk17-openjdk"
   "rust"
+  "npm"
+  
+  # system
   "tmux"
   "unzip"
-  "waybar"
   "wget"
+  "htop" 
+  "neofetch"
+  "sudo"
+  "exa"
+  "ripgrep"
+  "fd"
+  "fzf"
+  "blueberry"
+  "blueman"
+  "gst-plugin-pipewire"
+  "intel-ucode"
+  "iwd"
+  "mupdf"
+  "networkmanager"
+  "pipewire-alsa"
+
+  # terminal
+  "gnome-terminal"
+  "kitty"
+
+  ## window manager
+  # login manager
+  "ly"
+  # file system
+  "nemo"
+  # hyprland
+  "hyprland"
+  "waybar"
+  "mako"
+  "rofi"
+
+  # programs
+  "firefox"
   "gimp"
   )
 
@@ -81,6 +97,7 @@ yay_pakete=(
   "pycharm-professional"
   "python-pyfuse3"
   "ranger-git"
+  "visual-studio-code-bin"
 )
 
 for paket in "${yay_pakete[@]}"; do
