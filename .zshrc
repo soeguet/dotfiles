@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -77,19 +77,19 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(  
-  git
-  bundler
-  dotenv
-  macos
-  rake
-  rbenv
-  ruby
-  history
-  ripgrep
-  fd
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+plugins=(
+    git
+    bundler
+    dotenv
+    macos
+    rake
+    rbenv
+    ruby
+    history
+    ripgrep
+    fd
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 
@@ -133,4 +133,9 @@ source /home/soeguet/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias config='/sbin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 export EDITOR=nvim
-export VISUAL=nvim;
+export VISUAL=nvim
+
+alias ls='exa -l --group-directories-first --sort=ext'
+alias ld='exa -Dl'
+alias lt='exa -T --group-directories-first --level=2'
+alias lf='exa -R | rg'
