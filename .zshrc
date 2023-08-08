@@ -125,7 +125,7 @@ alias my_packages="comm -23 <(pacman -Qqett | sort) <(pacman -Qqg base-devel | s
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 source /home/soeguet/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

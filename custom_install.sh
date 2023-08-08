@@ -22,6 +22,8 @@ pacman_pakete=(
   "docker"
   "jdk17-openjdk"
   "rust"
+  "gradle"
+  "maven"
   "npm"
   
   # system

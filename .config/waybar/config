@@ -140,18 +140,10 @@
     },
 
     "clock": {
-<<<<<<< HEAD
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B} </big><tt><small>- {calendar}</small></tt>",
-        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-
-        "format-alt": "{:%Y-%m-%d}"
-=======
+        "format-alt": "{:%Y-%m-%d}",
         // "timezone": "Europe/Berlin",
         "tooltip-format": "<big>{:%Y %B}</big><tt><small>- {calendar}</small></tt>",
-        //"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%H:%M - %Y-%m-%d}"
->>>>>>> 39f17d0 (update all files)
     },
 
     "cpu": {
@@ -165,11 +157,7 @@
 
     "temperature": {
         // "thermal-zone": 2,
-<<<<<<< HEAD
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-=======
         //"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
->>>>>>> 39f17d0 (update all files)
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
@@ -188,13 +176,8 @@
             "warning": 30,
             "critical": 15
         },
-<<<<<<< HEAD
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-=======
         "format": "{capacity}% {icon} ",
         "format-charging": "{capacity}% ",
->>>>>>> 39f17d0 (update all files)
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
