@@ -10,61 +10,62 @@ uebersprungene_pakete=()
 # Installiere einige Pakete mit pacman
 pacman_pakete=(
 
-  # editor
-  "vim"
-  "nano"
-  "neovim"
+    # editor
+    "vim"
+    "nano"
+    "neovim"
 
-  # programming
-  "git"
-  "lazygit"
-  #"code"
-  "docker"
-  "jdk17-openjdk"
-  "rust"
-  "gradle"
-  "maven"
-  "npm"
-  
-  # system
-  "tmux"
-  "unzip"
-  "wget"
-  "htop" 
-  "neofetch"
-  "sudo"
-  "exa"
-  "ripgrep"
-  "fd"
-  "fzf"
-  "blueberry"
-  "blueman"
-  "gst-plugin-pipewire"
-  "intel-ucode"
-  "iwd"
-  "mupdf"
-  "networkmanager"
-  "pipewire-alsa"
+    # programming
+    "git"
+    "lazygit"
+    #"code"
+    "docker"
+    "jdk17-openjdk"
+    "rust"
+    "gradle"
+    "maven"
+    "npm"
 
-  # terminal
-  "gnome-terminal"
-  "kitty"
+    # system
+    "tmux"
+    "unzip"
+    "wget"
+    "htop"
+    "neofetch"
+    "sudo"
+    "exa"
+    "ripgrep"
+    "fd"
+    "fzf"
+    "blueberry"
+    "blueman"
+    "gst-plugin-pipewire"
+    "intel-ucode"
+    "iwd"
+    "mupdf"
+    "networkmanager"
+    "pipewire-alsa"
 
-  ## window manager
-  # login manager
-  "ly"
-  # file system
-  "nemo"
-  # hyprland
-  "hyprland"
-  "waybar"
-  "mako"
-  "rofi"
+    # terminal
+    "gnome-terminal"
+    "kitty"
 
-  # programs
-  "firefox"
-  "gimp"
-  )
+    ## window manager
+    # login manager
+    "ly"
+    "gdm"
+    # file system
+    "nemo"
+    # hyprland
+    "hyprland"
+    "waybar"
+    "mako"
+    "rofi"
+
+    # programs
+    "firefox"
+    "gimp"
+)
 
 for paket in "${pacman_pakete[@]}"; do
     if ! pacman -Qq | grep -qx "$paket"; then
@@ -91,15 +92,15 @@ fi
 
 # Installiere einige Pakete mit yay
 yay_pakete=(
-  "google-chrome"
-  "intellij-idea-ultimate-edition"
-  "joplin"
-  "joplin-desktop"
-  "oh-my-zsh-git"
-  "pycharm-professional"
-  "python-pyfuse3"
-  "ranger-git"
-  "visual-studio-code-bin"
+    "google-chrome"
+    "intellij-idea-ultimate-edition"
+    "joplin"
+    "joplin-desktop"
+    "oh-my-zsh-git"
+    "pycharm-professional"
+    "python-pyfuse3"
+    "ranger-git"
+    "visual-studio-code-bin"
 )
 
 for paket in "${yay_pakete[@]}"; do
@@ -136,4 +137,3 @@ else
     echo "Alle Pakete wurden erfolgreich installiert."
     echo "~~~~~~~~~"
 fi
-
