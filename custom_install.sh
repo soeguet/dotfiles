@@ -98,6 +98,7 @@ yay_pakete=(
     "joplin-desktop"
     "oh-my-zsh-git"
     "pycharm-professional"
+    "webstorm"
     "python-pyfuse3"
     "ranger-git"
     "visual-studio-code-bin"
