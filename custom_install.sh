@@ -45,6 +45,7 @@ pacman_pakete=(
     "mupdf"
     "networkmanager"
     "pipewire-alsa"
+    "pavucontrol"
 
     # terminal
     "gnome-terminal"
