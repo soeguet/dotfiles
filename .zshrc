@@ -131,7 +131,7 @@ source $ZSH/oh-my-zsh.sh
 source /home/soeguet/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/soeguet/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dots='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 export EDITOR=nvim
 export VISUAL=nvim
 

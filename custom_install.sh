@@ -109,6 +109,7 @@ yay_pakete=(
     "ranger-git"
     "visual-studio-code-bin"
     "grimblast-git"
+    "wlogout"
 )
 
 for paket in "${yay_pakete[@]}"; do
