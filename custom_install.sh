@@ -46,6 +46,11 @@ pacman_pakete=(
     "networkmanager"
     "pipewire-alsa"
     "pavucontrol"
+    "gnome-control-center"
+
+    # clipboard manage
+    "gpaste"
+    "cliphist"
 
     # terminal
     "gnome-terminal"
@@ -103,6 +108,7 @@ yay_pakete=(
     "python-pyfuse3"
     "ranger-git"
     "visual-studio-code-bin"
+    "grimblast-git"
 )
 
 for paket in "${yay_pakete[@]}"; do
