@@ -80,6 +80,7 @@ pacman_pakete=(
     "waybar"
     "mako"
     "rofi"
+    "ranger"
 
     # programs
     "firefox"
@@ -125,7 +126,6 @@ yay_pakete=(
     "pycharm-professional"
     "webstorm"
     "python-pyfuse3"
-    "ranger-git"
     "visual-studio-code-bin"
     "grimblast-git"
     "wlogout"
@@ -187,4 +187,3 @@ else
     echo "Alle Pakete wurden erfolgreich installiert."
     echo "~~~~~~~~~"
 fi
-
