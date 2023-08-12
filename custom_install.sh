@@ -41,7 +41,9 @@ pacman_pakete=(
 
     # system
     "tmux"
+    "tldr"
     "unzip"
+    "ark"
     "wget"
     "htop"
     "neofetch"

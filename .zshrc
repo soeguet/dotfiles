@@ -117,8 +117,8 @@ alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias dots='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-alias ls='exa -l --group-directories-first --sort=ext'
-alias la='exa -la --group-directories-first --sort=ext'
-alias ld='exa -Dl'
-alias lt='exa -T --group-directories-first --level=2'
-alias lf='exa -R | rg'
+alias la='exa --icons -laF --group-directories-first'
+alias ls='exa --icons -lF --group-directories-first'
+alias ld='exa --icons -laFD'
+alias lt='exa -T --group-directories-first --level=2 --icons'
+alias lf='exa -R --icons | rg'

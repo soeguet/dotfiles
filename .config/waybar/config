@@ -1,142 +1,221 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 30,
-    "margin-left": 10,
-    "margin-right": 10,
-    "margin-top": 5, 
+    "layer":                            "top",
+    "position":                         "top",
+    "height":                           30,
+    "margin-left":                      10,
+    "margin-right":                     10,
+    "margin-top":                       5, 
     
     // Choose the order of the modules
 
-    "modules-left": ["wlr/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["network", "backlight", "pulseaudio", "tray", "battery"],
-
+    "modules-left": [
+        "wlr/taskbar", "wlr/workspaces"
+    ],
+    
+    "modules-center": [
+        "clock"
+    ],
+    
+    "modules-right": [
+        "network",
+        "backlight", 
+        "pulseaudio", 
+        "tray", 
+        "battery"
+    ],
+    
+    ///////////////////////////////
     // Modules configuration
-    "wlr/workspaces": {
+    //
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 14,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
         "on-click": "activate",
-        "format": " {icon} ",
-        "format-icons": {
-            "1": " 1 ",
-            "2": " 2 ",
-            "3": " 3 ",
-            "4": " 4 ",
-            "5": " 5 ",
-            "6": " 6 ",
-            "7": " 7 ",
-            "8": " 8 ",
-            "9": " 9 ",
-            //"urgent": "!",
-            //"active": "()",
-            //"default": "1"
-         },
-         //"persistent_workspaces": {
-         //   "1": [],
-         //   "2": [],
-         //   "3": [],
-         //   "4": [],
-         //   "5": [],
-         //   "6": [],
-         //   "7": [],
-         //   "8": [],
-        // }
-    },
-    "hyprland/window": {
-      "format": " {title} ",
-      "max-length": 50,
-      "rewrite": {
-       "(.*) - Mozilla Firefox": "🌎 $1",
-       "(.*) - vim": " $1",
-       "(.*) - zsh": " [$1]"
-          }
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": " {name} {icon} ",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
+        "on-click-middle": "close",
+        "ignore-list": [
+           "Alacritty"
+        ],
+        "app_ids-mapping": {
+          "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
         }
+    },
+
+    "wlr/workspaces": {
+        "on-click":                     "activate",
+        
+        "format":                       " {icon} ",
+        "format-icons": {
+            "1":                        " 1 ",
+            "2":                        " 2 ",
+            "3":                        " 3 ",
+            "4":                        " 4 ",
+            "5":                        " 5 ",
+            "6":                        " 6 ",
+            "7":                        " 7 ",
+            "8":                        " 8 ",
+            "9":                        " 9 ",
+            //"urgent":                 " ! ",
+            //"active":                 "() ",
+            //"default":                " 1 "
+         },
+
+    },
+
+    "hyprland/window": {
+        "format":                       " {title} ",
+        "max-length":                   50,
+        
+        "rewrite": {
+            "(.*) - Mozilla Firefox":   "🌎 $1",
+            "(.*) - vim":               " $1",
+            "(.*) - zsh":               " [$1]"
+        
+        }
+    },
+
+    "keyboard-state": {
+        "numlock":                      true,
+        "capslock":                     true,
+        "format":                       " {name} {icon} ",
+        
+        "format-icons": {
+            "locked":                   "",
+            "unlocked":                 ""
+        }
+    
     },
 
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
+
     "clock": {
-        "tooltip-format": " <big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt> ",
-        "format-alt": " {:%Y-%m-%d} "
+        "tooltip-format":               " <big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt> ",
+        "format-alt":                   " {:%Y-%m-%d} "
     },
+
    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        // "thermal-zone":              2,
+        // "hwmon-path":                "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold":           80,
+        // "format-critical":           "{temperatureC}°C {icon}",
+        "format":                       "{temperatureC}°C {icon}",
+        
+        "format-icons": [
+            "", 
+            "", 
+            ""
+        ]
+
     },
+
     "backlight": {
-        // "device": "acpi_video1",
-        "format": " {percent}% {icon} ",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        // "device":                    "acpi_video1",
+        "format":                       " {percent}% {icon} ",
+        
+        "format-icons": [
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            "", 
+            ""
+        ]
+
     },
+
     "battery": {
+
         "states": {
             // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": " {capacity}% {icon} ",
-        "format-charging": " {capacity}%  ",
-        "format-plugged": " {capacity}%  ",
-        "format-alt": " {time} {icon} ",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+
+        "format":                       " {capacity}% {icon} ",
+        "format-charging":              " {capacity}%  ",
+        "format-plugged":               " {capacity}%  ",
+        "format-alt":                   " {time} {icon} ",
+        // "format-good":               "", // An empty format will hide the module
+        // "format-full":               "",
+
+        "format-icons": [
+            "", 
+            "", 
+            "", 
+            "", 
+            ""
+        ]
+
     },
+
     "battery#bat2": {
         "bat": "BAT2"
     },
+
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " {essid}   ", //({signalStrength}%) 
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        // "interface":                 "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi":                  " {essid}   ", //({signalStrength}%) 
+        "format-ethernet":              "{ipaddr}/{cidr} ",
+        "tooltip-format":               "{ifname} via {gwaddr} ",
+        "format-linked":                "{ifname} (No IP) ",
+        "format-disconnected":          "Disconnected ⚠",
+        "format-alt":                   "{ifname}: {ipaddr}/{cidr}"
     },
+
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": " {volume}% {icon} ", //{format_source}",
-        "format-bluetooth": " {volume}% {icon} ", //{format_source}",
-        "format-bluetooth-muted": "  {icon} ", //{format_source}",
-        "format-muted": "  {format_source} ",
-        "format-source": " {volume}%  ",
-        "format-source-muted": "  ",
+        // "scroll-step":               1, // %, can be a float
+        "format":                       " {volume}% {icon} ", //{format_source}",
+        "format-bluetooth":             " {volume}% {icon} ", //{format_source}",
+        "format-bluetooth-muted":       "  {icon} ", //{format_source}",
+        "format-muted":                 "  {format_source} ",
+        "format-source":                " {volume}%  ",
+        "format-source-muted":          "  ",
+        "on-click":                     "pavucontrol",
+        
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+            "headphone":                "",
+            "hands-free":               "",
+            "headset":                  "",
+            "phone":                    "",
+            "portable":                 "",
+            "car":                      "",
+
+            "default": [
+                "", 
+                "", 
+                ""
+            ]
+
+        }
+
     },
+
     "custom/media": {
-        "format": " {icon} {} ",
-        "return-type": "json",
-        "max-length": 40,
+        "format":                       " {icon} {} ",
+        "return-type":                  "json",
+        "max-length":                   40,
+
         "format-icons": {
-            "spotify": "",
-            "default": "🎜"
+            "spotify":                  "",
+            "default":                  "🎜"
         },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+
+        "escape":                       true,
+        "exec":                         "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec":                      "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
+
 }
 
