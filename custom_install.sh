@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+# ANSI Shadow
+echo ""
+echo ""
+echo "  ██████╗██╗   ██╗███████╗████████╗ ██████╗ ███╗   ███╗    ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗"
+echo "  ██╔════╝██║   ██║██╔════╝╚══██╔══╝██╔═══██╗████╗ ████║    ██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝"
+echo "  ██║     ██║   ██║███████╗   ██║   ██║   ██║██╔████╔██║    ███████╗██║     ██████╔╝██║██████╔╝   ██║   "
+echo "  ██║     ██║   ██║╚════██║   ██║   ██║   ██║██║╚██╔╝██║    ╚════██║██║     ██╔══██╗██║██╔═══╝    ██║   "
+echo "  ╚██████╗╚██████╔╝███████║   ██║   ╚██████╔╝██║ ╚═╝ ██║    ███████║╚██████╗██║  ██║██║██║        ██║   "
+echo "   ╚═════╝ ╚═════╝ ╚══════╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝   "
+echo ""
+echo ""
+
+
 # Aktualisiere die Paketdatenbank
 sudo pacman -Syu --noconfirm
 
@@ -33,6 +46,7 @@ pacman_pakete=(
     "htop"
     "neofetch"
     "sudo"
+    "zsh"
     "exa"
     "ripgrep"
     "fd"
@@ -44,7 +58,7 @@ pacman_pakete=(
     "iwd"
     "mupdf"
     "networkmanager"
-    "pipewire-alsa"
+    "pipewire"
     "pavucontrol"
     "gnome-control-center"
 
@@ -58,7 +72,6 @@ pacman_pakete=(
 
     ## window manager
     # login manager
-    "ly"
     "gdm"
     # file system
     "nemo"
@@ -96,13 +109,19 @@ if ! command -v yay &> /dev/null; then
     rm -rf yay
 fi
 
+# Überprüfen, ob homebrew installiert ist
+if ! command -v brew &> /dev/null; then
+    # Installiere Homebrew
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Aktualisiere Homebrew und füge das Homebrew-Repository hinzu
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # Installiere einige Pakete mit yay
 yay_pakete=(
     "google-chrome"
     "intellij-idea-ultimate-edition"
-    "joplin"
     "joplin-desktop"
-    "oh-my-zsh-git"
     "pycharm-professional"
     "webstorm"
     "python-pyfuse3"
@@ -110,6 +129,12 @@ yay_pakete=(
     "visual-studio-code-bin"
     "grimblast-git"
     "wlogout"
+)
+
+# Homebrew-Pakete
+brew_pakete=(
+    "gcc"
+    "joplin-cli"
 )
 
 for paket in "${yay_pakete[@]}"; do
@@ -124,13 +149,29 @@ for paket in "${yay_pakete[@]}"; do
     fi
 done
 
+for paket in "${brew_pakete[@]}"; do
+    if ! brew list | grep -qx "$paket"; then
+        brew install "$paket"
+        # Überprüfe den Exit-Status von brew
+        if [ $? -ne 0 ]; then
+            fehlgeschlagene_pakete+=("$paket")
+        fi
+    else
+        uebersprungene_pakete+=("$paket")
+    fi
+done
+
 # Am Ende ausgeben, welche Pakete nicht installiert oder übersprungen wurden
 if [ ${#uebersprungene_pakete[@]} -ne 0 ]; then
     echo "________"
     echo "Folgende Pakete wurden übersprungen (bereits installiert):"
     for paket in "${uebersprungene_pakete[@]}"; do
-        echo "- $paket"
-    done
+        abc="$abc$paket, "    
+    done 
+    # Entferne das letzte Komma und Leerzeichen
+    abc=${abc%, }
+    echo "________"
+    echo $abc
     echo "________"
     echo " "
 fi
@@ -146,3 +187,4 @@ else
     echo "Alle Pakete wurden erfolgreich installiert."
     echo "~~~~~~~~~"
 fi
+
