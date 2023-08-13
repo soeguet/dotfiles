@@ -139,6 +139,10 @@ button:hover {
   background-color: #bbccdd;
 }
 
+#bluetooth {
+  background-color: #bbccdd;
+}
+
 #battery {
   background-color: #bbccdd;
   color: #333333;
@@ -162,20 +166,15 @@ button:hover {
 }
 
 #battery.warning:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  background-color: #e6c200;
+  color: #000000;
 }
 
 #battery.critical:not(.charging) {
   background-color: #f53c3c;
   color: #ffffff;
   animation-name: blink;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
