@@ -52,20 +52,23 @@ button:hover {
 }
 
 #workspaces button {
-  padding: 0 0.01em;
+  padding: 0 0.003em;
   background-color: transparent;
+  transition: 1s;
   color: #ffffff;
 }
 
 #workspaces button.active {
   background-color: #bbccdd;
   color: #000000;
+  transition: 1s;  
   font-weight: bold;
   border-radius: 5px;
 }
 
 #workspaces button.active:hover {
   background: #64727d;
+  transition: 1s;
   box-shadow: inset 0 -3px #eb4d4b;
 }
 
@@ -76,11 +79,13 @@ button:hover {
   /* border-width: 1px; */
   border-radius: 5px;
   border-color: #ffffff;
+  transition: 1s;
   color: inherit;
 }
 
 #workspaces button.focused {
   background-color: #64727d;
+  transition: 1s;
   box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -95,6 +100,7 @@ button:hover {
 
 #clock,
 #battery,
+#bluetooth,
 #cpu,
 #memory,
 #disk,
@@ -138,6 +144,10 @@ button:hover {
   color: #333333;
 }
 
+#clock.calendar {
+  background-color: #000000;
+}
+
 #battery.charging,
 #battery.plugged {
   color: #ffffff;
@@ -149,6 +159,16 @@ button:hover {
     background-color: #ffffff;
     color: #000000;
   }
+}
+
+#battery.warning:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #battery.critical:not(.charging) {

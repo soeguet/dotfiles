@@ -2,7 +2,9 @@
 
 nm-applet --indicator &
 
-waybar &
+#waybar &
+
+waybar -c ~/.config/waybar/config.json &
 
 mako &
 

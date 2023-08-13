@@ -42,7 +42,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -122,3 +122,10 @@ alias ls='exa --icons -lF --group-directories-first'
 alias ld='exa --icons -laFD'
 alias lt='exa -T --group-directories-first --level=2 --icons'
 alias lf='exa -R --icons | rg'
+
+alias joplin='tmux rename-window joplin && joplin'
+alias waybar='waybar -c ~/.config/waybar/config.json'
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi

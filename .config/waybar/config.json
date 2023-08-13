@@ -9,7 +9,8 @@
     // Choose the order of the modules
 
     "modules-left": [
-        "wlr/taskbar", "wlr/workspaces"
+        "wlr/taskbar", 
+	"wlr/workspaces"
     ],
     
     "modules-center": [
@@ -19,8 +20,9 @@
     "modules-right": [
         "network",
         "backlight", 
+	"bluetooth",
         "pulseaudio", 
-        "tray", 
+        //"tray", 
         "battery"
     ],
     
@@ -98,8 +100,33 @@
     },
 
     "clock": {
-        "tooltip-format":               " <big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt> ",
-        "format-alt":                   " {:%Y-%m-%d} "
+	"format": 			"{:%R, %a. %F} ",
+        "format-alt": 			"{:%A, %B %d, %Y (%R)} ",
+	"tooltip":			"true",
+        "tooltip-format": 		"<tt><small>{calendar}</small></tt>",
+        
+	"calendar": {
+        	"mode"          : 	"year",
+        	"mode-mon-col"  : 	3,
+        	"weeks-pos"     : 	"right",
+                "on-scroll"     : 	1,
+             	"on-click-right": 	"mode",
+            	"format": {
+                    	"months":     	"<span color='#ffead3'><b>{}</b></span>",
+                 	"days":       	"<span color='#ecc6d9'><b>{}</b></span>",
+                    	"weeks":      	"<span color='#99ffdd'><b>W{}</b></span>",
+                	"weekdays":   	"<span color='#ffcc66'><b>{}</b></span>",
+                      	"today":      	"<span color='#ff6699'><b><u>{}</u></b></span>"
+                }
+        },
+        
+	"actions":  {
+        	"on-click-right": 	"mode",
+        	"on-click-forward": 	"tz_up",
+        	"on-click-backward": 	"tz_down",
+        	"on-scroll-up": 	"shift_up",
+        	"on-scroll-down": 	"shift_down"
+        }
     },
 
    "temperature": {
@@ -135,16 +162,27 @@
 
     },
 
+    "bluetooth": {
+	"format": 					" {status}",
+	"format-connected": 				" {device_alias}",
+	"format-connected-battery": 			" {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": 			[ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": 				"{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": 			"{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": 		"{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": 	"{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+
     "battery": {
 
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
 
-        "format":                       " {capacity}% {icon} ",
-        "format-charging":              " {capacity}%  ",
+        "format":                       " {capacity}% {icon}  ",
+        "format-charging":              " {capacity}% 󰂄 ",
         "format-plugged":               " {capacity}%   ",
         "format-alt":                   " {time} {icon} ",
         // "format-good":               "", // An empty format will hide the module
@@ -166,28 +204,30 @@
 
     "network": {
         // "interface":                 "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi":                  " {essid}   ", //({signalStrength}%) 
-        "format-ethernet":              "{ipaddr}/{cidr} ",
-        "tooltip-format":               "{ifname} via {gwaddr} ",
-        "format-linked":                "{ifname} (No IP) ",
-        "format-disconnected":          "Disconnected ⚠",
-        "format-alt":                   "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi":                  "   ", //({signalStrength}%) 
+        "format-ethernet":              "{ipaddr}/{cidr} 󰈀 ",
+        "tooltip-format":               "{signalStrength}% - {essid} - {ifname} via {gwaddr}   ",
+        "format-linked":                "{ifname} (No IP) 󰣻 ",
+        "format-disconnected":          "Disconnected ⚠ ",
+        "format-alt":                   "{ifname}: {ipaddr}/{cidr} ",
+	"on-click-right":		"nm-connection-editor",
+	"on-click-middle":		"nm-applet --indicator"
     },
 
     "pulseaudio": {
-        // "scroll-step":               1, // %, can be a float
+        "scroll-step":               5, // %, can be a float
         "format":                       " {volume}% {icon} ", //{format_source}",
         "format-bluetooth":             " {volume}% {icon} ", //{format_source}",
-        "format-bluetooth-muted":       "  {icon} ", //{format_source}",
-        "format-muted":                 "  {format_source} ",
+        "format-bluetooth-muted":       " 󰗿 {icon} ", //{format_source}",
+        "format-muted":                 "  {format_source} ",
         "format-source":                " {volume}%  ",
         "format-source-muted":          "  ",
         "on-click":                     "pavucontrol",
         
         "format-icons": {
             "headphone":                "",
-            "hands-free":               "",
-            "headset":                  "",
+            "hands-free":               "󱥋",
+            "headset":                  "󰋎",
             "phone":                    "",
             "portable":                 "",
             "car":                      "",

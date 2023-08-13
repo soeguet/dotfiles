@@ -59,10 +59,17 @@ pacman_pakete=(
     "intel-ucode"
     "iwd"
     "mupdf"
+
+    # network
     "networkmanager"
+    "nm-connection-editor"
+    "network-manager-applet"
+
+    # sound
     "pipewire"
     "pavucontrol"
-    "gnome-control-center"
+
+    #"gnome-control-center"
 
     # clipboard manage
     "gpaste"
@@ -87,6 +94,7 @@ pacman_pakete=(
     # programs
     "firefox"
     "gimp"
+    "libreoffice-still"
 )
 
 for paket in "${pacman_pakete[@]}"; do
