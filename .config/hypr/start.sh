@@ -8,6 +8,6 @@ waybar -c ~/.config/waybar/config.json &
 
 mako &
 
-blueman-manager &
+#blueman-manager &
 
 copyq --start-server &
