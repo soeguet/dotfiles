@@ -9,7 +9,7 @@
     // Choose the order of the modules
 
     "modules-left": [
-        "wlr/taskbar", 
+        //"wlr/taskbar", 
 	"wlr/workspaces"
     ],
     
@@ -31,28 +31,34 @@
     //
 
     "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 14,
-        "icon-theme": "Numix-Circle",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
+        "format":                       "{icon}",
+        "all-outputs":                  "false",
+        "active-first":                 "true",
+        "icon-size":                    14,
+        "icon-theme":                   "Numix-Circle",
+        "tooltip-format":               "{title}",
+        "on-click":                     "activate",
+        "on-click-right":               "close",
+        
         "ignore-list": [
            "Alacritty"
         ],
+        
         "app_ids-mapping": {
-          "firefoxdeveloperedition": "firefox-developer-edition"
+            "firefoxdeveloperedition":  "firefox-developer-edition"
         },
+        
         "rewrite": {
-            "Firefox Web Browser": "Firefox",
-            "Foot Server": "Terminal"
+            "Firefox Web Browser":      "Firefox",
+            "Foot Server":              "Terminal"
         }
+
     },
 
     "wlr/workspaces": {
         "on-click":                     "activate",
+        "format":                       " {icon} ",
         
-        "format":                       "{icon}",
         "format-icons": {
             "1":                        " 1 ",
             "2":                        " 2 ",

@@ -8,6 +8,8 @@ waybar -c ~/.config/waybar/config.json &
 
 mako &
 
+workstyle &> /tmp/workstyle.log
+
 #blueman-manager &
 
 copyq --start-server &

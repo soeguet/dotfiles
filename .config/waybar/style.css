@@ -62,7 +62,7 @@ button:hover {
   background-color: #bbccdd;
   color: #000000;
   transition: 1s;  
-  font-weight: bold;
+  /*font-weight: bold;*/
   border-radius: 5px;
 }
 

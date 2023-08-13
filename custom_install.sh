@@ -131,20 +131,25 @@ fi
 # Installiere einige Pakete mit yay
 yay_pakete=(
     "google-chrome"
-    "intellij-idea-ultimate-edition"
+    "grimblast-git"
     "joplin-desktop"
+
+    # programming
+    "intellij-idea-ultimate-edition"
     "pycharm-professional"
     "webstorm"
     "python-pyfuse3"
     "visual-studio-code-bin"
-    "grimblast-git"
-    "wlogout"
+
+    # waybar
+    "wlogout" # https://github.com/ArtsyMacaw/wlogout
+    "workstyle-git" # https://github.com/pierrechevalier83/workstyle
 )
 
 # Homebrew-Pakete
 brew_pakete=(
     "gcc"
-    "joplin-cli"
+    "joplin-cli" 
 )
 
 for paket in "${yay_pakete[@]}"; do
