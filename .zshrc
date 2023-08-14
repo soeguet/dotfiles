@@ -85,15 +85,11 @@ plugins=(
     	fd
     	zsh-autosuggestions
     	zsh-syntax-highlighting
-	zsh-vim-mode
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-#vi mode
-source "$HOME/.oh-my-zsh/custom/plugins/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

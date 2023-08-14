@@ -10,17 +10,26 @@
 # precedence is given in order of apparition in this file.
 
 "alacritty" = ""
-"kitty" = ""
+"kitty" = ""
 "github" = ""
 "rust" = ""
-"google" = ""
+"google" = ""
 "private browsing" = ""
 "firefox" = ""
 "chrome" = ""
 "file manager" = ""
+"nemo" = ""
+"Team-Chat - AiV" = "󰭻"
+"Team-Chat" = "󰭻"
+"Chat" = "󰭻"
+"com-soeguet-Main"= "󰭻"
+"teamchat8"= "󰭻"
+".java"= "󰭻"
+".jar"= "󰭻"
+"dolphin" = ""
 "libreoffice calc" = ""
-"libreoffice writer" = ""
-"libreoffice" = ""
+"libreoffice writer" = ""
+"libreoffice" = "󰏆"
 "nvim" = ""
 "gthumb" = ""
 "menu" = ""
@@ -32,7 +41,11 @@
 "disk usage" = ""
 ".pdf" = ""
 
+# programming
+"Visual Studio Code" = "󰨞"
+"code" = "󰨞"
+
 [other]
-fallback_icon = "(x)"
+fallback_icon = ""
 deduplicate_icons = true
 separator = ""

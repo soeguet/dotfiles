@@ -59,6 +59,7 @@ pacman_pakete=(
     "intel-ucode"
     "iwd"
     "mupdf"
+    "ansible"
 
     # network
     "networkmanager"
@@ -133,6 +134,7 @@ yay_pakete=(
     "google-chrome"
     "grimblast-git"
     "joplin-desktop"
+    "anydesk-bin"
 
     # programming
     "intellij-idea-ultimate-edition"
