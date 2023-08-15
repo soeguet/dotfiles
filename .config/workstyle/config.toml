@@ -23,6 +23,7 @@
 "Team-Chat" = "󰭻"
 "Chat" = "󰭻"
 "com-soeguet-Main"= "󰭻"
+"com-soeguet-Main"= "󰭻"
 "teamchat8"= "󰭻"
 ".java"= "󰭻"
 ".jar"= "󰭻"
@@ -46,6 +47,6 @@
 "code" = "󰨞"
 
 [other]
-fallback_icon = ""
+fallback_icon = "󰭻"
 deduplicate_icons = true
 separator = ""

@@ -18,6 +18,7 @@
     ],
     
     "modules-right": [
+        "custom/clipboard",
         "network",
         "backlight", 
 	"bluetooth",
@@ -98,6 +99,11 @@
             "unlocked":                 ""
         }
     
+    },
+
+    "custom/clipboard": {
+        "format":                       "  ",
+        "on-click":                     "gpaste-client ui"
     },
 
     "tray": {
