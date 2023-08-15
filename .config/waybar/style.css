@@ -98,6 +98,7 @@ button:hover {
   border-bottom: 3px solid #ffffff;
 }
 
+#custom-clipboard,
 #clock,
 #battery,
 #bluetooth,
@@ -182,6 +183,11 @@ button:hover {
 
 label:focus {
   background-color: #000000;
+}
+
+#custom-clipboard {
+  background-color: #bbccdd;
+  padding-right: 15px;
 }
 
 #cpu {
