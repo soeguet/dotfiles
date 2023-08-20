@@ -122,7 +122,7 @@ alias la='exa --icons -laF --group-directories-first'
 alias ls='exa --icons -lF --group-directories-first'
 alias ld='exa --icons -laFD'
 alias lt='exa -T --group-directories-first --level=2 --icons'
-alias lf='exa -R --icons | rg'
+alias lf='exa --recurse --icons | rg'
 
 alias joplin='tmux rename-window joplin && joplin'
 alias waybar='waybar -c ~/.config/waybar/config.json'
@@ -130,3 +130,11 @@ alias waybar='waybar -c ~/.config/waybar/config.json'
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+# pnpm
+export PNPM_HOME="/home/soeguet/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

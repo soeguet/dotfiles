@@ -179,7 +179,7 @@
 	"format": 					" {status}",
 	"format-connected": 				" {device_alias}",
 	"format-connected-battery": 			" {device_alias} {device_battery_percentage}%",
-	// "format-device-preference": 			[ "device1", "device2" ], // preference list deciding the displayed device
+	"format-device-preference": 			[ "device1", "device2" ], // preference list deciding the displayed device
 	
         "on-click-right":                               "blueman-manager",
 
